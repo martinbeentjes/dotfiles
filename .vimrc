@@ -3,10 +3,9 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'digitaltoad/vim-jade'
+  Plugin 'VundleVim/Vundle.vim'
+  Plugin 'airblade/vim-gitgutter'
+  Plugin 'digitaltoad/vim-jade'
 call vundle#end()
 
 filetype plugin indent on
