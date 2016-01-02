@@ -6,8 +6,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'geoffharcourt/one-dark.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'digitaltoad/vim-jade'
@@ -25,7 +23,6 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 call vundle#end()
 filetype plugin indent on
 
-
 " Vim Git Gutter
 let g:gitgutter_enabled = 1
 let g:gitgutter_sign_added = '+'
@@ -36,16 +33,16 @@ let g:gitgutter_sign_modified_removed = '%-'
 
 " NERDTree git plugin
 let g:NERDTreeIndicatorMapCustom = {
-			\ "Modified"	: "~",
-			\ "Staged"		: "+",
-			\ "Untracked" : "*",
-			\ "Renamed"   : "%",
-			\ "Unmerged"  : "=",
-			\ "Deleted"   : "x",
-			\ "Dirty"     : "✗",
-			\ "Clean"			: "✔︎",
-			\ "Unknown"   : "?",
-			\ }
+	\ "Modified"  : "~",
+	\ "Staged"    : "+",
+	\ "Untracked" : "*",
+	\ "Renamed"   : "%",
+	\ "Unmerged"  : "=",
+	\ "Deleted"   : "x",
+	\ "Dirty"     : "✗",
+	\ "Clean"     : "✔︎",
+	\ "Unknown"   : "?",
+\ }
 
 "let g:Powerline_symbols = 'fancy'
 set encoding=utf-8
