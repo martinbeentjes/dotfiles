@@ -20,20 +20,10 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'keith/swift.vim'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 call vundle#end()
 filetype plugin indent on
-
-
-
-let g:solarized_termcolors=256
-set bg=light
-set nu
-set ts=2
-set sw=2
-set si
-
-syntax enable
-
 
 
 " Vim Git Gutter
@@ -93,7 +83,6 @@ set nu
 set ts=2
 set sw=2
 set si
-
 syntax enable
 
 autocmd vimenter * NERDTree
