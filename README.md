@@ -1,5 +1,10 @@
 # dotfiles
-This repository contains all my personal dotfiles I use.
+I have multiple dotfiles for several applications I use.
 
-### bashrc
-As I am working on OSX, I added `. ~/.bashrc` to my `~/.bash_profile` file. I did this to have my bashrc file to be custom to my preferences.
+
+
+#### Vim
+I have quite a big vimrc file, a bunch plugins enhancing my user experience with the editor. Both NERDTree and Airline are the two I mostly use. I was checking [vimawesome.com](http://vimawesome.com) where I stumbled upon these plugins.
+
+#### Git
+The alias `git tree` is used to display the branch tree in the terminal. 
