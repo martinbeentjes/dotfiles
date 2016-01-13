@@ -19,6 +19,11 @@ Plugin 'bling/vim-airline'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'keith/swift.vim'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'tpope/vim-surround'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'jiangmao/auto-pairs'
 call vundle#end()
 filetype plugin indent on
 filetype plugin on
@@ -69,14 +74,14 @@ let g:hardy_arduino_path = '/Applications/Arduino.app/Contents/MacOS/Arduino'
 
 " NERD Tree
 let g:NERDTreeIndicatorMapCustom = {
-			\ "Modified"  : "~",
-			\ "Staged"    : "+",
+			\ "Modified"	: "~",
+			\ "Staged"		: "+",
 			\ "Untracked" : "*",
 			\ "Renamed"   : "%",
 			\ "Unmerged"  : "=",
 			\ "Deleted"   : "x",
 			\ "Dirty"     : "✗",
-			\ "Clean"     : "✔︎",
+			\ "Clean"			: "✔︎",
 			\ "Unknown"   : "?",
 			\ }
 autocmd vimenter * NERDTree
@@ -89,6 +94,23 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 map <C-t>v <Plug>TaskList
 
 " LatexBox
-map <C-l>m :Latexmk<CR>
-map <C-l>v :LatexView<CR>
-map <C-l>b :Latexmk<CR>:LatexView<CR>:LatexmkClean<CR>
+map <Leader>lt :LatexTOC<CR>
+map <Leader>lm :Latexmk<CR>
+map <Leader>lv :LatexView<CR>
+map <Leader>lb :Latexmk<CR>:LatexView<CR>:LatexmkClean<CR>
+
+" vim-tmux-navigator
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
+nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+let g:tmux_navigator_save_on_switch = 1
+
+" vim-json
+let g:vim_json_syntax_conceal = 0
+
+" Custom controls
+map :Q :q<CR>
+map <C-s> :w<CR>
