@@ -23,7 +23,8 @@ Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'tpope/vim-surround'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'jiangmao/auto-pairs'
+"Plugin 'jiangmao/auto-pairs'
+Plugin 'fatih/vim-go'
 call vundle#end()
 filetype plugin indent on
 filetype plugin on
@@ -31,12 +32,13 @@ filetype plugin on
 " General vim configuration
 set encoding=utf-8
 set t_Co=256
-set bg=light
+set bg=dark
 set nu
 set ts=2
 set sw=2
 set si
 set cursorline
+set backspace=2
 syntax enable
 
 " Vim Git Gutter
@@ -114,3 +116,4 @@ let g:vim_json_syntax_conceal = 0
 " Custom controls
 map :Q :q<CR>
 map <C-s> :w<CR>
+
