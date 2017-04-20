@@ -4,6 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'L9'
+Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-markdown'
@@ -21,14 +22,20 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'keith/swift.vim'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'FuzzyFinder'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'fatih/vim-go'
+Plugin 'scwood/vim-hybrid'
 Plugin 'jalcine/cmake.vim'
 Plugin 'mhinz/vim-startify'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'blueshirts/darcula'
 Plugin 'guns/xterm-color-table.vim'
 Plugin 'jacoborus/tender'
-
+Plugin 'rust-lang/rust.vim'
+Plugin 'nanotech/jellybeans.vim' 
 call vundle#end()
 filetype plugin indent on
 filetype plugin on
@@ -43,19 +50,39 @@ set sw=4
 set si
 set cursorline
 set backspace=2
+
+" Do not wrap words
 set wrap
+set linebreak
+set nolist
+set textwidth=80
+
 set mouse=a
 colorscheme tendercustom
 syntax enable
-set colorcolumn=+1
+set colorcolumn=80
 set clipboard=unnamed
 set laststatus=2
+set showmatch " Show matching parentheses
+set ignorecase  " Ignore case on searches
+set smartcase
+set smarttab
+set hlsearch " Highlight searches
+set incsearch "Show search matches while typing
+
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Custom maps
 map <Leader>P :set paste<CR>
 map :Q :q<CR>
 map <C-s> :w<CR>
+
+""" Custom commands
+"
+" Linebreaking, custom command
+command! -nargs=* Wrap set wrap linebreak nolist
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Vim Git Gutter
@@ -107,11 +134,12 @@ let g:NERDTreeIndicatorMapCustom = {
 			\ "Clean"			: "✔︎",
 			\ "Unknown"   : "?",
 			\ }
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeQuitOnOpen=1
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Tasklist
