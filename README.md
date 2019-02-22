@@ -1,10 +1,8 @@
 # dotfiles
 I have multiple dotfiles for several applications I use.
 
+## Home
+At home I am running Ubuntu 18.04.2 LTS on a Desktop.
 
-
-#### Vim
-I have quite a big vimrc file, a bunch plugins enhancing my user experience with the editor. Both NERDTree and Airline are the two I mostly use. I was checking [vimawesome.com](http://vimawesome.com) where I stumbled upon these plugins.
-
-#### Git
-The alias `git tree` is used to display the branch tree in the terminal. 
+## Work
+At work I am running macOS Mojave. 
