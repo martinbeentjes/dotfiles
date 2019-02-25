@@ -4,3 +4,6 @@
 	br = branch
 	ci = commit
 	st = status
+[user]
+	email = martin@beentjes.me
+	name = Martin Beentjes
